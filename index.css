@@ -1,0 +1,35 @@
+body{
+    background-image: url("images/graphic-tree-hill.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+div{
+    margin-top: 50px;
+    background-color:rgba(57, 77, 99, 0.253);
+    text-align: center;
+    width: 350px;
+    height: 230px;
+    border-radius: 10%;
+    border: 1px solid cornflowerblue;
+    margin-left: auto;
+    margin-right: auto;
+}
+table{
+    text-align: center;
+  
+}
+button{
+    color: gainsboro;
+    border-color: 2px solid cornflowerblue;
+    width: 80px;
+    border-radius:30% ;
+    margin-top: 20px
+}
+h3{
+    font-size: 35px;
+    display: table-row;
+}
+a{
+    text-decoration: none;
+}

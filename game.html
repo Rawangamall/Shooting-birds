@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title> Level 1</title>
+        <link rel="stylesheet" href="game.css">
+    </head>
+    <body>
+       <div>
+        <label name="username">Username :&nbsp;</label>
+       </div>
+       <div>
+        <label name="score">Score :</label>
+       </div>
+       <div>
+        <label name="timer">Time 1:0</label>
+       </div>
+       <div>
+        <label name="killed">Birds killed :</label>
+       </div>
+       <div id="start" >
+     
+        <img src="images/notification-removebg.png" width="40px" height="40px" style="position:static" style="display: inline-block;">
+          
+        <h1 style="color: cornflowerblue;">Welcome&nbsp;</h1>
+        
+        <button><font color="cornflowerblue" >Start</font></button>
+
+    </div>
+    <div id="end" >
+     
+        <img src="images/finish-removebg-preview.png" width="40px" height="40px" style="position:static" style="display: inline-block;">
+          
+        <h1 style="color: rgb(91, 117, 165);" id="status"></h1>
+        
+        <button onClick="window.location.reload()"><font color="cornflowerblue" >Play again!</font></button>
+
+    </div>
+        <script src="game.js"> </script>
+    </body>
+</html>

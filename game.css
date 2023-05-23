@@ -1,0 +1,60 @@
+body{
+    background-image: url("images/game4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: crosshair ;
+}
+
+#start{
+    display: block;
+width: 300px;
+height: 240px;
+background-color: rgba(245, 245, 245, 0.74);
+text-align: center;
+border-radius: 30%;
+margin-left: auto;
+margin-right: auto;
+margin-top: 350px;
+}
+#end{
+display: none;
+width: 300px;
+height: 220px;
+background-color: rgba(245, 245, 245, 0.74);
+text-align: center;
+border-radius: 30%;
+margin-left: auto;
+margin-right: auto;
+margin-top: 350px;
+border: 1px solid rgb(91, 117, 165);
+}
+button{
+    width: 100px;
+    height: 50px;
+    border-color: cornflowerblue;
+    border-radius: 20%;
+    margin-top: 8px;
+}
+img{
+    width: 80px;
+    height: 80px;
+    position: absolute;
+
+}
+div{
+width: 150px;
+height: 40px;
+background-color: rgba(255, 237, 237, 0.473);
+text-align: center;
+border-radius: 70%;
+display: inline-block;
+align-items: center;
+padding: 20px;
+margin-left: 105px;
+border: 1px solid rgba(100, 148, 237, 0.678);
+
+
+}
+label{
+    color: cornflowerblue;
+}
