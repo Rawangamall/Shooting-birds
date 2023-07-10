@@ -1,5 +1,5 @@
 # Shooting-birds
-It's one level game : user can write his name then enter the game
+It's one level game : user can write his name then enter the game (Name validation)
 ##
 There's 3 types of birds :
 <ul>
