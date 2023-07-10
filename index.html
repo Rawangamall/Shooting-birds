@@ -4,36 +4,53 @@
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
-<div> 
+<section> 
         <table align="center">
-         
-          <tr><td><h1 style="color: rgb(224, 231, 238);">Select your level</h1></td> </tr>  
+          <tr><td><h1 style="color:rgb(12, 83, 59);">Enter your name</h1></td> </tr>  
           <tr>
             <td>
-              <select > 
-                <option value="" disabled selected>Choose an action</option>
-                 <option value="1">Level 1</option>
-              </select>
+              <input id="name" type="text" name="name"  style="background-color: rgba(57, 77, 99, 0.253);">
+              <p id="error-msg" style="color: red; font-size: 14px;"></p>
+    
+            </td>
+          </tr>
+          <tr><td><h1 style="color: rgb(12, 83, 59);">Select your level</h1></td> </tr>  
+          <tr>
+            <td>
+              <div class="select-box">
+                <div class="select-box__current" tabindex="1">
+                  <div class="select-box__value">
+                    <input class="select-box__input" type="radio" id="0" value="1" name="Ben" checked="checked"/>
+                    <p class="select-box__input-text">Level 1</p>
+                  </div>
+                  <div class="select-box__value">
+                    <input class="select-box__input" type="radio" id="1" value="2" name="Ben" checked="checked"/>
+                    <p class="select-box__input-text">Level 2</p>
+                  </div>
+  
+                </div>
+                <ul class="select-box__list">
+                  <li>
+                    <label class="select-box__option" for="0" aria-hidden="aria-hidden">Level 1</label>
+                  </li>
+                  <li>
+                    <label class="select-box__option" for="1" aria-hidden="aria-hidden">Level 2</label>
+                  </li>
+                </ul>
+              </div>
         </td>
         </tr>
-        <tr><td><h1 style="color: rgb(224, 231, 238);">Enter your name</h1></td> </tr>  
-
       <tr>
         <td>
-          <input id="name" type="text" name="name"  style="background-color: rgba(57, 77, 99, 0.253);">
-        </td>
-      </tr>
-      <tr>
-        <td>
-            <button><a href="game.html"><font color="cornflowerblue" >Go</font></a></button>
+            <button><font color="darkgreen" >Go</font></button>
         </td>
       </tr>
         </table>
-</div>
-<div style="height: 280px"> 
+</section>
+<section style="height: 280px"> 
     <table align="center" cellspacing="5px">
      
-      <tr><td colspan="2"><h1 style="color: rgb(224, 231, 238);">Shooting birds points</h1></td> </tr>  
+      <tr><td colspan="2"><h1 style="color:rgb(12, 83, 59);">Shooting Birds Points</h1></td> </tr>  
       <tr>
         <td><img src="images/black.gif" width="40px" height="40px"></td>
         <td><h3 style="color: black;">+ 10 points</h3></td>
@@ -50,7 +67,7 @@
       </tr>
 
     </table>
-</div>
+</section>
 <script src="index.js"> </script>
 
 </body>

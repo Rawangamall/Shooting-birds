@@ -1,10 +1,22 @@
 let start = document.querySelector("button");
 let intro = document.querySelector("h1");
 let username = document.querySelector("label[name=username]");
-intro.innerText += localStorage.getItem("name");
-username.innerText += localStorage.getItem("name");
+
+let game = new Audio("audio/game.mp3");
+game.play();
 
 start.onclick=function(){
+
+  if (localStorage.getItem("name") === null) {
+    alert("Please enter your name first");
+    return;
+}else{
+
+  intro.innerText += localStorage.getItem("name");
+  username.innerText += localStorage.getItem("name");
+  
+}
+
     let welcomeDiv = document.querySelector("#start");
     welcomeDiv.style.display="none"
 class BirdObj{
@@ -31,6 +43,9 @@ class Birds extends BirdObj{
 
     constructor(src,score){
         super(src,score);
+
+   this.shootSound = new Audio("audio/shot2.mp3");
+
       document.body.append(this.image);
       if(this.src == "images/black.gif")
       {this.image.classList.add("black");}
@@ -77,6 +92,9 @@ getRandom(min, max){
  
   shooting(){ 
     this.image.addEventListener('click', kill => {
+      
+      this.shootSound.play();
+
     if(this.score == 5)
     {this.image.style.display="none";
     Birds.Totalscore = 5;
@@ -95,8 +113,8 @@ getRandom(min, max){
   document.querySelector("label[name=score]").innerHTML = "Score: " + Birds.TotalScore;
   document.querySelector("label[name=killed]").innerHTML = "Birds killed: " + Birds.count;
 
-   // console.log(Birds.TotalScore);
-    });
+
+});
     if(Birds.TotalScore > 50){
       document.querySelector("#status").innerHTML = "YOU WON";
       }else{ document.querySelector("#status").innerHTML = "YOU LOSE";
@@ -148,7 +166,7 @@ explosion() {
         (positionx + BOwidth + 100) > parseInt(element.style.left) + element.width &&
         positiony - 100 < parseInt(element.style.top) &&
         (positiony + BOheight + 100) > parseInt(element.style.top) + element.height){
-        // console.log(element);
+
         Birds.Totalscore = 10;
         Birds.count++;
         element.style.display="none";
@@ -163,8 +181,8 @@ explosion() {
         (positionx + BOwidth + 100) > parseInt(element.style.left) + element.width &&
         positiony - 100 < parseInt(element.style.top) &&
         (positiony + BOheight + 100) > parseInt(element.style.top) + element.height){
-        // console.log(element);
-         Birds.Totalscore = 5;
+
+          Birds.Totalscore = 5;
          Birds.count++;
          element.style.display="none";
          document.querySelector("label[name=score]").innerHTML = "Score: " + Birds.TotalScore;
