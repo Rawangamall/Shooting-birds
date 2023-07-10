@@ -8,7 +8,8 @@ There's 3 types of birds :
   <li> Cyan bird -10 point (Intermediate) </li>
 </ul>
 </br>
-There's bomb will kill the birds arround it by 100px as a length and you have a timer within only 1 min
+There's bomb will kill the birds arround it by 100px as a length using collision detection theory
+The game have a timer within only 1 min
 </br>
 If your total score is more than 50 (YOU WON)
 
