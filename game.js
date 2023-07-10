@@ -3,9 +3,11 @@ let intro = document.querySelector("h1");
 let username = document.querySelector("label[name=username]");
 
 let game = new Audio("audio/game.mp3");
-game.play();
+
 
 start.onclick=function(){
+
+  game.play();
 
   if (localStorage.getItem("name") === null) {
     alert("Please enter your name first");
@@ -125,7 +127,9 @@ getRandom(min, max){
 class Bomb extends BirdObj{
   constructor(src,score=0){  
     super(src,score)
-    
+
+    this.bombSound = new Audio("audio/bomb2.mp3");
+
     document.body.append(this.image);
     this.image.style.top=0+"px";
     this.image.style.left=getRandom(0,window.innerWidth-80) +"px";
@@ -150,10 +154,18 @@ moving_down(speed)
 }
 
 explosion() {
+
   let positionx = parseInt(this.image.style.left);
   let BOwidth = parseInt(this.image.width);
   let BOheight = parseInt(this.image.height);
   this.image.onclick =  () => {
+
+    var currentSrc = this.image.src;
+    var newSrc = currentSrc.split("images/")[0] + "images/explosion.png";
+    this.image.src = newSrc;
+    
+    this.bombSound.play()
+
     let positiony = parseInt(this.image.style.top);
     let Bbirds = document.querySelectorAll(".black");
     let Wbirds = document.querySelectorAll(".white");
@@ -193,10 +205,10 @@ explosion() {
     for (let index = 0; index < Cbirds.length; index++) {
       let element = Cbirds[index];
       if (
-        positionx - 100 < parseInt(element.style.left) &&
-        (positionx + BOwidth + 100) > parseInt(element.style.left) + element.width &&
-        positiony - 100 < parseInt(element.style.top) &&
-        (positiony + BOheight + 100) > parseInt(element.style.top) + element.height){
+        positionx - 200 < parseInt(element.style.left) &&
+        (positionx + BOwidth + 200) > parseInt(element.style.left) + element.width &&
+        positiony - 200 < parseInt(element.style.top) &&
+        (positiony + BOheight + 200) > parseInt(element.style.top) + element.height){
  
           Birds.Totalscore = -10;
           Birds.count++;
@@ -207,8 +219,9 @@ explosion() {
        
       }
     }
-    this.image.remove();
-  }
+    setTimeout(() => {
+      this.image.remove();
+    }, 500);  }
 }
 
 }//class bomb
@@ -258,6 +271,7 @@ let timerID = setInterval(function(){
     seconds--;
     document.querySelector("label[name=timer]").innerHTML = "Timer 0"+":" + seconds; 
     if(seconds == 0){
+      game.pause();
     clearInterval(timerID);
     clearInterval(id);
     clearInterval(bombID);
