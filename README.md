@@ -9,6 +9,7 @@ There's 3 types of birds :
 </ul>
 </br>
 There's bomb will kill the birds arround it by 100px as a length using collision detection theory
+</br>
 The game have a timer within only 1 min
 </br>
 If your total score is more than 50 (YOU WON)
